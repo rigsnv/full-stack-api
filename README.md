@@ -55,7 +55,7 @@ awesome-project/ ├── client/ # Frontend code │ ├── public/ # Stati
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/full-stack-api.git
+git clone https://github.com/rigsnv/full-stack-api.git
 cd full-stack-api
 ```
 ### 2. Frontend Setup

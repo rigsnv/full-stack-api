@@ -1,6 +1,6 @@
 **/__pycache__/
-server/secret/** */
-server/data_store/pcs_files/** */ 
-server/data_store/weather_forecast_files/** */
+server/secret/*
+server/data_store/pcs_files/* 
+server/data_store/weather_forecast_files/*
 **/venv/
 **/node_modules/

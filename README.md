@@ -69,6 +69,17 @@ npm run dev
 
 ### 3. Backend Setup
 
+### IMPOIRTANT
+
+The Met Office's API requires an API key. You must register with the Met Office in order to get your own API key.
+Once you get your api key, you need to create a json file named "met_office_api_key.json" and place it inside the ./server/secret directory, as the "met_office_client" looks for that file to get the key and call the Met Office's API. if the file is missing, you will bet an CORS error.
+
+Go to: https://login.auth.metoffice.cloud/dce84ec6-ce0f-45d1-ba16-e36b817081eb/oauth2/v2.0/authorize?response_type=code&client_id=56081e5c-48a6-47f2-a7c4-b8f8cf8172a6&scope=56081e5c-48a6-47f2-a7c4-b8f8cf8172a6%20openid%20offline_access&state=LZV5h5fFkIozOytqDfKXFKIwPxbr7ENBNe6owHeI_iM%3D&redirect_uri=https://datahub.metoffice.gov.uk/login/oauth2/code/&nonce=mi68P0idXnXww5sFopWKwHgUG-oQEZdUJEWovQuiejo&p=b2c_1a_victory_susi&x-client-SKU=spring-boot-starter
+
+Select "Register" and follow the steps above for the above to make the key available to e the "met_office_client"
+
+The Public Contracts Scotland's API (PCS) doesnt require a key, so it will work without the need to add any files.
+
 1. Open a new Terminal and navigate to the project's root directory (full-stack-api).
 2. Run the following commands which will:
     1. Navigate to the server directory of the project.

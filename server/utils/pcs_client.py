@@ -10,7 +10,7 @@ class PCSClient:
         self.output_type = "0"
         self.url = 'https://api.publiccontractsscotland.gov.uk/v1/Notices'
         self.headers = {
-            'User-Agent': 'PCS_API_Interface_Proof_of_Concept/1.0 (rigsnv@gamil.com, james@jmautomations.scot)'
+            'User-Agent': 'Your Application Name/Version (Your email)'
             } # REQUIRED
         self.params = {
             'noticeType': self.notice_type,
@@ -20,7 +20,7 @@ class PCSClient:
         self.data = None
         self.timestamp = None
         self.pcs_contracts_filename = None
-        self.data_store = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data_store/pcs_contracts"))
+        self.data_store = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data_store/pcs_files"))
         self.log_file_path = os.path.join(self.data_store, "file_creation_log.txt")
 
 
@@ -71,7 +71,7 @@ class PCSClient:
             print(self.pcs_contracts_file_path)
             with open(self.pcs_contracts_file_path, 'w') as file:
                 json.dump(self.data, file, indent=4)  # Save JSON data with indentation for readability
-            print(f"Response saved to {self.pcs_contracts_filename} in ../../client/public")
+            print(f"Response saved to {self.pcs_contracts_filename} in ./data_store/pcs_files")
         except Exception as e:
             print(f"Error saving response to file: {str(e)}")
 

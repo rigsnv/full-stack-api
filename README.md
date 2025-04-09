@@ -132,6 +132,23 @@ You can run tests sending HTTP requests to the backend fastAPI server using the 
 ## File Logs
 - JSON files are stored in client/public/ and logged in file_creation_log.txt.
 
+### IMPOIRTANT
+
+For development you should add stricks mode in the main.jsx module (./client/src/main.jsx), as in the script below.
+
+```javascript
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+```
+
 ## Future Enhancements
 - Implement advanced filtering for PCS contracts.
 - Improve UI/UX for JSON tree rendering.

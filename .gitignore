@@ -1,4 +1,4 @@
-github/workflows/super-linter.yml
+.github/workflows/super-linter.yml
 **/__pycache__/
 server/secret/*
 server/data_store/*

@@ -36,12 +36,12 @@ const Pcs = () => {
                         setContracts(
                             <div>
                                 <div className="forecast">
-                                    <div className="forecastData">
-                                        <div className="dataContainer">
+                                    <div className="forecast-data">
+                                        <div className="data-container">
                                             <h3>Location:</h3>
                                             <p>Scotland</p>
                                         </div>
-                                        <div className="dataContainer">
+                                        <div className="data-container">
                                             <h3>Published Date:</h3>
                                             <p>{new Date(data.publishedDate).toLocaleString()}</p>
                                         </div>

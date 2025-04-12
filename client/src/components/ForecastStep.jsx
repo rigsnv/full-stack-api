@@ -3,7 +3,7 @@ import React from "react";
 const ForecastStep = ({weatherData, timeStep}) => {
 
     return (
-        <div className="forcast-step">
+        <div className="forecast-step">
             <p>Time: {new Date(weatherData.features[0].properties.timeSeries[timeStep].time).toLocaleString()}</p>
             <p>Temperature: {weatherData.features[0].properties.timeSeries[timeStep].screenTemperature} °C</p>
             <p>Max Temperature: {weatherData.features[0].properties.timeSeries[timeStep].maxScreenAirTemp} °C</p>

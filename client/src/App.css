@@ -128,7 +128,7 @@ button:focus-visible {
   flex-direction: column;
 }
 
-.forecastData {
+.forecast-data {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -139,7 +139,7 @@ button:focus-visible {
   overflow: scroll;
 }
 
-.dataContainer {
+.data-container {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -151,7 +151,7 @@ button:focus-visible {
   margin: 1rem 0;
 }
 
-.timeSeries {
+.time-series {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -160,7 +160,7 @@ button:focus-visible {
   overflow: scroll;
 }
 
-.timeStep {
+.time-step {
   min-width: 15rem;
   display: flex;
   justify-content: left;

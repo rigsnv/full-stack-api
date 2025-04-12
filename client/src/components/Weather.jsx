@@ -49,20 +49,20 @@ const Weather = () => {
     return (
         <div>
             <div className="forecast">
-                <div className="forecastData">
-                    <div className="dataContainer">
+                <div className="forecast-data">
+                    <div className="data-container">
                         <h3>Location:</h3>
                         <p>{weatherData.features[0].properties.location.name}</p>
                     </div>
-                    <div className="dataContainer">
+                    <div className="data-container">
                         <h3>forecast Starts:</h3>
                         <p>{new Date(weatherData.features[0].properties.modelRunDate).toLocaleString()}</p>
                     </div>
                 </div>
             </div>
-            <div className="timeSeries">
+            <div className="time-series">
                     {Array.from({ length: timeSteps }).map((_, timeStep) => (
-                        <div key={timeStep} className="timeStep">
+                        <div key={timeStep} className="time-step">
                             <ForecastStep key={timeStep} weatherData={weatherData} timeStep={timeStep} />
                         </div>
                     ))}

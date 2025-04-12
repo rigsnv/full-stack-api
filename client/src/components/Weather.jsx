@@ -5,7 +5,7 @@ import ForecastStep from "./ForecastStep";
 const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [error, setError] = useState(null);
-    const url = "http://127.0.0.1:8000/weather";
+    const url = "rigsnvapi-acdzcsh7a0fcf0dw.uksouth-01.azurewebsites.net/weather";
     const [timeSteps, setTimeSteps] = useState(null);
     
     useEffect(() => {

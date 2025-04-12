@@ -2,8 +2,6 @@ name: Python CI
 
 on:
     push:
-      paths:
-        - 'server/**'
 
 env:
   AZURE_WEBAPP_NAME: rigsnvapi # Set this to your application's name

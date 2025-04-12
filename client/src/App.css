@@ -10,6 +10,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
   cursor: pointer;
@@ -37,9 +38,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -48,11 +51,13 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #fff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
@@ -77,7 +82,6 @@ button:focus-visible {
   display: inline-block;
   margin-right: 0 1rem;
   padding: 0.25rem 0.75rem;
-
 }
 
 .test {
@@ -104,7 +108,8 @@ button:focus-visible {
   font-size: 15px;
 }
 
-#tree-container .active, #tree-container .collapsible:hover {
+#tree-container .active,
+#tree-container .collapsible:hover {
   background-color: #555;
 }
 
@@ -132,7 +137,6 @@ button:focus-visible {
   padding: 0.5rem 1rem;
   margin: 1rem 0;
   overflow: scroll;
-
 }
 
 .dataContainer {
@@ -141,7 +145,7 @@ button:focus-visible {
   align-items: center;
   flex-direction: row;
   gap: 1rem;
-  border: #ffffff 1px solid;
+  border: #fff 1px solid;
   border-radius: 10px;
   padding: 0 1rem;
   margin: 1rem 0;
@@ -162,11 +166,10 @@ button:focus-visible {
   justify-content: left;
   align-items: center;
   flex-direction: column;
-  border: #ffffff 1px solid;
+  border: #fff 1px solid;
   border-radius: 10px;
   padding: 0 1rem;
   overflow: auto;
-
 }
 
 .contracts {
@@ -176,16 +179,15 @@ button:focus-visible {
   padding: 1rem;
   margin: 1rem 0;
   overflow: scroll;
-
 }
 
 .contract {
   min-width: 30rem;
-  border: #ffffff 1px solid;
+  border: #fff 1px solid;
   border-radius: 10px;
   padding: 0;
-  background: #ffffff;
-  color: #000000;
+  background: #fff;
+  color: #000;
 }
 
 .contract-data {

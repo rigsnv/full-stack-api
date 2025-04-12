@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return{"message": "Hello World of Fast APIs!"}
+    return{"message": "Hello World of Fast APIs on Azure!"}
 
 class Params(BaseModel):
     latitude: float

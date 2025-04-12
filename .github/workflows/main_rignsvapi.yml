@@ -4,10 +4,6 @@ on:
     push:
       paths:
         - 'server/**'
-        
-    workflow_run:
-      workflows: [Super-Linter]
-      types: [completed]
 
 env:
   AZURE_WEBAPP_NAME: rigsnvapi # Set this to your application's name

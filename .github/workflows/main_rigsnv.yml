@@ -1,7 +1,15 @@
 # File: .github/workflows/workflow.yml
 name: JavaScript CI
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'client/**'
+      
+  workflow_run:
+    workflows: [Super-Linter]
+    types: [completed]
+
 
 env:
   AZURE_WEBAPP_NAME: rigsnv

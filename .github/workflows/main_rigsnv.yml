@@ -6,11 +6,6 @@ on:
     paths:
       - 'client/**'
 
-  workflow_run:
-    workflows: [Super-Linter]
-    types: [completed]
-
-
 env:
   AZURE_WEBAPP_NAME: rigsnv
   AZURE_WEBAPP_PACKAGE_PATH: '.'  # Updated to root directory

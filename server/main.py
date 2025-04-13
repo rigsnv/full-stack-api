@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from .utils.met_office_client import MetOfficeClient
 from .utils.pcs_client import PCSClient
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
 app = FastAPI()
 
@@ -55,3 +56,6 @@ def get_contracts():
 def update_contracts(date_from=None, notice_type=3, output_type=0):
     client = PCSClient()
     return client.get_pcs_contracts(date_from=date_from, notice_type=notice_type, output_type=output_type)
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='0.0.0.0', port=8000)

@@ -1,3 +1,4 @@
 requests
 fastAPI[standard]
 pytest
+python-multipart

@@ -28,7 +28,7 @@ jobs:
       uses: azure/webapps-deploy@v3
       with:
         app-name: rigsnvapi
-        host: rigsnv_asp_1444
+        resource-group-name: rigsnv_rg_3932
         # Suppress warning: This secret is securely managed by GitHub Actions.
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_RIGSNVAPI }}
         package: './server'

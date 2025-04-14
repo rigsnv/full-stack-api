@@ -5,7 +5,7 @@ import getDepth from './getJsonDepth';
 const Pcs = () => {
     const [pcsData, setPcsData] = useState(null);
     const [error, setError] = useState(null);
-    const url = "rigsnvapi-acdzcsh7a0fcf0dw.uksouth-01.azurewebsites.net/pcs_contracts";
+    const url = "rigsnvapi.azurewebsites.net/pcs_contracts";
     const [contractsNum, setContractsNum] = useState(null);
     const [contracts, setContracts] = useState(null);
     

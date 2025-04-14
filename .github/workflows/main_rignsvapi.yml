@@ -6,7 +6,7 @@ on:
         - 'server/**'
 env:
   AZURE_WEBAPP_NAME: rigsnvapi # Set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.' # Set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: './server' # Explicitly set the path to the server directory
   
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r ./requirements.txt
-      working-directory: './server'
+      working-directory: './server' # Ensure dependencies are installed from the server directory
     - name: Building web app
       uses: azure/appservice-build@v2
     - name: Deploy web App using GH Action azure/webapps-deploy
@@ -29,7 +29,6 @@ jobs:
       with:
         app-name: rigsnvapi
         resource-group-name: rigsnv_rg_3932
-        # Suppress warning: This secret is securely managed by GitHub Actions.
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_RIGSNVAPI }}
-        package: './server'
-        
+        package: './server' # Ensure the server directory is deployed
+

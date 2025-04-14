@@ -22,7 +22,7 @@ jobs:
         ls
         python -m pip install --upgrade pip
         pip install -r server/requirements.txt
-      working-directory: '.'
+      working-directory: 'server'
     - name: Building web app
       uses: azure/appservice-build@v2
     - name: Deploy web App using GH Action azure/webapps-deploy
@@ -32,5 +32,5 @@ jobs:
         resource-group-name: rigsnv_rg_3932
         # Suppress warning: This secret is securely managed by GitHub Actions.
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_RIGSNVAPI }}
-        package: './server'
+        package: 'server'
         

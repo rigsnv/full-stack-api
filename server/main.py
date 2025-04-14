@@ -56,5 +56,4 @@ def get_contracts():
 def update_contracts(date_from=None, notice_type=3, output_type=0):
     client = PCSClient()
     return client.get_pcs_contracts(date_from=date_from, notice_type=notice_type, output_type=output_type)
-
 #test, this should trigger a build

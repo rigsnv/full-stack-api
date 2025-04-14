@@ -24,7 +24,7 @@ jobs:
         pip install -r requirements.txt
       working-directory: 'server' # Correct relative path
     - name: Building web app
-      uses: azure/appservice-build@v2
+      uses: azure/appservice-build@v3
       with:
         source-directory: 'server' # Explicitly specify the source directory for the build
     - name: Deploy web App using GH Action azure/webapps-deploy
@@ -34,5 +34,6 @@ jobs:
         resource-group-name: rigsnv_rg_3932
         # Suppress warning: This secret is securely managed by GitHub Actions.
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_RIGSNVAPI }}
-        package: 'server'        
+        package: 'server'
+        
 

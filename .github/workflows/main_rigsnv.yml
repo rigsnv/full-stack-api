@@ -32,7 +32,7 @@ jobs:
         npm run test --if-present
       working-directory: ./client  # Ensure this path is correct
     - name: 'Deploy to Azure WebApp'
-      uses: azure/webapps-deploy@v4
+      uses: azure/webapps-deploy@v3
       with: 
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         # Suppress warning: This secret is securely managed by GitHub Actions.

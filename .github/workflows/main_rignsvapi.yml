@@ -21,7 +21,7 @@ jobs:
       run: |
         ls
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r server/requirements.txt
       working-directory: '.'
     - name: Building web app
       uses: azure/appservice-build@v2

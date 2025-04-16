@@ -10,8 +10,8 @@ const Weather = () => {
     useEffect(() => {
         
         async function fetchWeatherData() {
-            let baseUrl = "https://rigsnvapi.azurewebsites.net/weather";
-            let url = new URL("/", baseUrl);
+            let baseUrl = "https://rigsnvapi.azurewebsites.net";
+            let url = new URL("/weather", baseUrl);
             try {
                 const coordinates = await getLocation();
                 try {

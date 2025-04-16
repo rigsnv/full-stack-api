@@ -12,8 +12,8 @@ const Pcs = () => {
 
     useEffect(() => {
         async function fetchPCSContracts() {
-            let baseUrl = "https://rigsnvapi.azurewebsites.net/pcs_contracts";
-            let url = new URL("/", baseUrl);
+            let baseUrl = "https://rigsnvapi.azurewebsites.net";
+            let url = new URL("/pcs_contracts", baseUrl);
             try {
                 const response = await fetch(url, {
                     method: 'GET',

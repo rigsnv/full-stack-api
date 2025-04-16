@@ -59,15 +59,11 @@ class MetOfficeClient:
         if self.timesteps not in ["hourly", "three-hourly", "daily"]:
             raise ValueError("ERROR: The available frequencies for timesteps are hourly, three-hourly or daily.")
 
-        # Load API key
-        try:
-            with open(self.filepath) as credentials:
-                data = json.load(credentials)
-                self.apikey = data['key']
-        except FileNotFoundError:
-            raise FileNotFoundError(f"ERROR: The {credentials} file was not found. Please ensure it exists.")
-        except json.JSONDecodeError:
-            raise ValueError(f"ERROR: The {credentials} file is not a valid JSON file.")
+        # Load API key from environment variable
+        self.apikey = os.getenv('MET_OFFICE_API_KEY')
+        if not self.apikey:
+            raise ValueError("ERROR: The MET_OFFICE_API_KEY environment variable is not set.")
+
         # Call the Met Office API to retrieve the forecast data
         self.url = self.baseUrl + self.timesteps
         self.headers.update({"apikey": self.apikey})

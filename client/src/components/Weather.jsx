@@ -5,12 +5,13 @@ import ForecastStep from "./ForecastStep";
 const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [error, setError] = useState(null);
-    const url = "rigsnvapi.azurewebsites.net/weather";
     const [timeSteps, setTimeSteps] = useState(null);
     
     useEffect(() => {
         
         async function fetchWeatherData() {
+            let baseUrl = "https://rigsnvapi.azurewebsites.net/weather";
+            let url = new URL("/", baseUrl);
             try {
                 const coordinates = await getLocation();
                 try {

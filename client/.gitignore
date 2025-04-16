@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Reverse proxy files
+applicationHost.xdt
+web.config

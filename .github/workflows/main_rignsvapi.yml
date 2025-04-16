@@ -4,6 +4,7 @@ on:
     push:
       paths:
         - 'server/**'
+        - '.github/workflows/main_rignsvapi.yml'
 env:
   AZURE_WEBAPP_NAME: rigsnvapi
   AZURE_WEBAPP_PACKAGE_PATH: './server'
@@ -40,5 +41,10 @@ jobs:
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_RIGSNVAPI }}
         package: 'server'
         slot-name: production
+    - name: Create Met Office API Key JSON on Azure
+      run: |
+        echo "$MET_OFFICE_API_KEY" > secret/met_office_api_key.json
+      env:
+        MET_OFFICE_API_KEY: ${{ secrets.MET_OFFICE_API_KEY }}
 
 

@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'client/**'
-      - 'main_rigsnv.yml'
+      - '.github/workflows/main_rigsnv.yml'
 
 env:
   AZURE_WEBAPP_NAME: rigsnv

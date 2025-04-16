@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'client/**'
+      - 'main_rigsnv.yml'
 
 env:
   AZURE_WEBAPP_NAME: rigsnv
@@ -25,10 +26,15 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     - name: npm install, build, and test
       run: |
-        # Build and test the project, then
-        # deploy to Azure Web App.
+        # Install dependencies
         npm install
-        npx vite build --if-present
+        # Build the project based on configuration
+        if [ -f ./client/vite.config.js ]; then
+          npx vite build
+        else
+          npm run build --if-present
+        fi
+        # Run tests if a test script is defined
         npm run test --if-present
       working-directory: ./client  # Ensure this path is correct
     - name: 'Deploy to Azure WebApp'

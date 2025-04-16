@@ -47,4 +47,3 @@ jobs:
       env:
         MET_OFFICE_API_KEY: ${{ secrets.MET_OFFICE_API_KEY }}
 
-

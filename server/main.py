@@ -11,7 +11,6 @@ origins = [
     "http://localhost:5173",
     "http://127.0.0.1/5173",
     "https://rigsnv-ejfqade8hydkh3c8.uksouth-01.azurewebsites.net/",
-    "217.160.0.207",
     "https://217.160.0.207",
     "https://ricardogarcia.uk",
 ]

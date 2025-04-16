@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import "./App.css";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
@@ -10,7 +10,7 @@ const App = () => {
     setPage(pageClicked);
     console.log(`Clicked on ${pageClicked}`);
   }
-
+console.log("App component rendered");
   return (
     <div>
       <Header handleClick={handleClick} />

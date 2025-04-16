@@ -14,6 +14,7 @@ const Pcs = () => {
         async function fetchPCSContracts() {
             let baseUrl = "https://rigsnvapi.azurewebsites.net";
             let url = new URL("/pcs_contracts", baseUrl);
+            console.log("Pcs fetching data");
             try {
                 const response = await fetch(url, {
                     method: 'GET',

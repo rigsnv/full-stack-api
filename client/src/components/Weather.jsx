@@ -12,6 +12,7 @@ const Weather = () => {
         async function fetchWeatherData() {
             let baseUrl = "https://rigsnvapi.azurewebsites.net";
             let url = new URL("/weather", baseUrl);
+            console.log("Weather fetching data");
             try {
                 const coordinates = await getLocation();
                 try {

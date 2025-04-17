@@ -9,6 +9,7 @@ app = FastAPI()
 
 origins = [
     "https://ricardogarcia.uk",
+    "https://ricardogarcia.uk/",
     "https://ricardogarcia.uk/weather",
     "https://ricardogarcia.uk/pcs_contracts",
     "https://217.160.0.207",

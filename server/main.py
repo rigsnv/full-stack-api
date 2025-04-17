@@ -1,8 +1,9 @@
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body, Request
 from pydantic import BaseModel
 from .utils.met_office_client import MetOfficeClient
 from .utils.pcs_client import PCSClient
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 import uvicorn
 
 app = FastAPI()
@@ -25,6 +26,21 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.middleware("http")
+async def referer_and_path_middleware(request: Request, call_next):
+    # Check the Referer header
+    referer = request.headers.get("referer")
+    allowed_referer = "https://ricardogarcia.uk"
+
+    # Check the request path
+    allowed_paths = ["/weather", "/pcs_contracts"]
+
+    if referer and referer.startswith(allowed_referer) and request.url.path in allowed_paths:
+        response = await call_next(request)
+        return response
+
+    return JSONResponse(status_code=403, content={"detail": "Forbidden: Invalid referer or path"})
 
 @app.get("/")
 async def root():

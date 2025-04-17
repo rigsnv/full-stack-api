@@ -8,7 +8,9 @@ import uvicorn
 app = FastAPI()
 
 origins = [
-    "https://ricardogarcia.uk/",
+    "https://ricardogarcia.uk",
+    "https://ricardogarcia.uk/weather",
+    "https://ricardogarcia.uk/pcs_contracts",
     "https://217.160.0.207",
     "https://rigsnv-ejfqade8hydkh3c8.uksouth-01.azurewebsites.net/",
     "http://localhost:5173",

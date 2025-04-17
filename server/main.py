@@ -8,11 +8,11 @@ import uvicorn
 app = FastAPI()
 
 origins = [
+    "https://ricardogarcia.uk/",
+    "https://217.160.0.207",
+    "https://rigsnv-ejfqade8hydkh3c8.uksouth-01.azurewebsites.net/",
     "http://localhost:5173",
     "http://127.0.0.1/5173",
-    "https://rigsnv-ejfqade8hydkh3c8.uksouth-01.azurewebsites.net/",
-    "https://217.160.0.207",
-    "https://ricardogarcia.uk",
 ]
 
 app.add_middleware(

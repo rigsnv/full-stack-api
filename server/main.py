@@ -11,9 +11,6 @@ app = FastAPI()
 origins = [
     "https://ricardogarcia.uk",
     "https://www.ricardogarcia.uk",
-    "https://ricardogarcia.uk/weather",
-    "https://ricardogarcia.uk/pcs_contracts",
-    "https://217.160.0.207",
     "https://rigsnv-ejfqade8hydkh3c8.uksouth-01.azurewebsites.net",
     "http://localhost:5173",
     "http://127.0.0.1/5173",
@@ -26,21 +23,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-@app.middleware("http")
-async def referer_and_path_middleware(request: Request, call_next):
-    # Check the Referer header
-    referer = request.headers.get("referer")
-    allowed_referers = origins
-
-    # Check the request path
-    allowed_paths = ["/weather", "/pcs_contracts"]
-
-    if referer and any(referer.startswith(allowed) for allowed in allowed_referers) and request.url.path in allowed_paths:
-        response = await call_next(request)
-        return response
-
-    return JSONResponse(status_code=403, content={"detail": "Forbidden: Invalid referer or path"})
 
 @app.get("/")
 async def root():
@@ -77,5 +59,3 @@ def get_contracts():
 def update_contracts(date_from=None, notice_type=3, output_type=0):
     client = PCSClient()
     return client.get_pcs_contracts(date_from=date_from, notice_type=notice_type, output_type=output_type)
-
-#test, this should trigger a build
